@@ -76,7 +76,8 @@ tTestHelper2 <- function(formula, CI, datasources) {
   
   f<-NULL
   
-  while(!converge.state && iteration.count < 20) {
+  maxit <- 20
+  while(!converge.state && iteration.count < maxit) {
     cat("..")
     
     iteration.count <- iteration.count+1
@@ -259,7 +260,7 @@ tTestHelper2 <- function(formula, CI, datasources) {
     
     return(output)
   } else {
-    warning(paste("Did not converge after", 20, "iterations. Increase maxit parameter as necessary."))
+    warning(paste("Did not converge after", maxit, "iterations. Increase maxit parameter as necessary."))
     return(NULL)
   }
   
