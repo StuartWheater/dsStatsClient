@@ -104,6 +104,9 @@ If a formula is provided all other but 'conf.level=0.95' are ignored.
   # the below example should not work, paired t.test is not possible if the 'y' variable is missing
   # ds.tTest(x='D$LAB_HDL', paired=TRUE)
 
+  # Example 11: Assessing the difference of mean of a continuous across the levels of a categorical variable
+  # In the below example one might to know if the mean HDL is significantly different between males and females.
+  aa <- ds.tTest(x='D$LAB_HDL~D$GENDER')
   # clear the Datashield R sessions and logout
   datashield.logout(opals)
 
